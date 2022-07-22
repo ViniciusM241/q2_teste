@@ -1,5 +1,5 @@
 import React from 'react';
-import Router from '~/Router';
+import Router from '~/layout/Router';
 import GlobalStyle from './styles/GlobalStyle';
 
 function Layout () {

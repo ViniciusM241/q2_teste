@@ -1,0 +1,13 @@
+import styled from "styled-components";
+
+export const StyledInline = styled.div`
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: ${props => {
+    if (props.right) return 'flex-end';
+    if (props.left) return 'flex-start';
+    return 'center'
+  }};
+`;

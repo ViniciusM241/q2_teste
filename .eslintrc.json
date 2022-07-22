@@ -18,6 +18,7 @@
         "react"
     ],
     "rules": {
-        "global-require": "off"
+        "global-require": "off",
+        "react/prop-types": 0
     }
 }

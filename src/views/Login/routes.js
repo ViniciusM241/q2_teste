@@ -1,4 +1,5 @@
-import Login from './index';
+import React from 'react';
+const Login = React.lazy(() => import('./index'));
 
 export default [
   {

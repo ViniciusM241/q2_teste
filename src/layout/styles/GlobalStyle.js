@@ -14,6 +14,30 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     font-family: 'IBM Plex Sans', sans-serif;
   }
+
+  .mt-10 {
+    margin-top: 10px;
+  }
+
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+
+  .mt-20 {
+    margin-top: 20px;
+  }
+
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+
+  .mt-40 {
+    margin-top: 40px;
+  }
+
+  .mb-40 {
+    margin-bottom: 40px;
+  }
 `;
 
 export default GlobalStyle;
