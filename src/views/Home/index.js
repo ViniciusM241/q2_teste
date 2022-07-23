@@ -1,8 +1,14 @@
 import React from 'react';
+import {
+  Container,
+  T1,
+} from '~/components';
 
 function Home() {
   return (
-    <h1>OLA HOME PAGE</h1>
+    <Container>
+      <T1> Contas bancárias </T1>
+    </Container>
   );
 }
 

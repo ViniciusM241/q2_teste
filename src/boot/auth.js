@@ -5,7 +5,7 @@ export function isLogged() {
 }
 
 export function getToken() {
-  return !!localStorage.getItem(KEY);
+  return localStorage.getItem(KEY);
 }
 
 export function setToken(token) {

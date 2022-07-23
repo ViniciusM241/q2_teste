@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body, html {
-    width: 100vh;
     min-height: 100vh;
     font-weight: 600;
     font-size: 1rem;

@@ -6,7 +6,6 @@ function useBreakpoints() {
   const windowSize = useWindowSize();
 
   const getBreakpointsObject = useCallback(() => {
-    console.log(windowSize.width)
     return {
       xs: windowSize.width <= breakpointsSet.sm,
       sm: windowSize.width >= breakpointsSet.sm && windowSize.width < breakpointsSet.md,

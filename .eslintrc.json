@@ -18,6 +18,7 @@
         "react"
     ],
     "rules": {
+        "no-unused-vars": 1,
         "global-require": "off",
         "react/prop-types": 0
     }

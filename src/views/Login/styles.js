@@ -6,6 +6,7 @@ import logo from "~/assets/q2_image.png";
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  padding: 0 20px;
 
   display: flex;
   flex-direction: column;
@@ -14,7 +15,12 @@ export const Container = styled.div`
 `;
 
 export const Box = styled.div`
-  width: 480px;
+  min-width: ${({breakpoints}) => {
+    if (breakpoints.xs)
+      return '150px'
+    else
+      return '480px'
+  }};
   padding: 55px 40px 100px 40px;
   border-radius: 20px;
   border: 1px solid ${colors.LIGHT_BLUE};
@@ -23,7 +29,12 @@ export const Box = styled.div`
 
 export const BlueBackground = styled.div`
   background-color: ${colors.LIGHT_BLUE};
-  width: 50%;
+  width: ${({breakpoints}) => {
+    if (breakpoints.xs)
+      return '100%'
+    else
+      return '50%'
+  }};
   height: 60vh;
   min-height: 200px;
 
@@ -39,7 +50,12 @@ export const TextureBackground = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  width: 50%;
+  width: ${({breakpoints}) => {
+    if (breakpoints.xs)
+      return '100%'
+    else
+      return '50%'
+  }};
   height: 50vh;
   min-height: 200px;
 
@@ -52,9 +68,6 @@ export const TextureBackground = styled.div`
 export const Logo = styled.img.attrs({
   src: logo,
 })`
-  position: absolute;
-  top: 37px;
-  left: 37px;
 `;
 
 export const Error = styled.p`

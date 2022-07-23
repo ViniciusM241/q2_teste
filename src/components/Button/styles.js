@@ -12,6 +12,13 @@ export const StyledButton = styled.button`
 
   border-radius: 5px;
   background-color: ${colors.LIGHT_BLUE};
-  border: none;
+  border: 2px solid transparent;
   cursor: pointer;
+  transition: all .2s ease;
+
+  &:hover {
+    background-color: ${colors.LIGHT_BLUE_30};
+    border: 2px solid ${colors.LIGHT_BLUE};
+    color: ${colors.LIGHT_BLUE};
+  }
 `;

@@ -7,7 +7,7 @@ export const StyledInline = styled.div`
   align-items: center;
   justify-content: ${props => {
     if (props.right) return 'flex-end';
-    if (props.left) return 'flex-start';
-    return 'center'
+    if (props.center) return 'center';
+    return 'flex-start'
   }};
 `;
