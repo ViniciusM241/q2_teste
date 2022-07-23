@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useCallback } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -29,7 +29,7 @@ function CustomRouter () {
                 exact,
                 ...props
               }, index) => {
-                const Element = () => {
+                const Element = useCallback(() => {
                   const next = () => {
                     return {
                       element: Component && (
@@ -65,7 +65,10 @@ function CustomRouter () {
                       )
                     )
                   }
-                };
+                }, [
+                  middlewares,
+                  Component,
+                ]);
 
                 return (
                   <Route

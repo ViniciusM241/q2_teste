@@ -43,4 +43,8 @@ export const MenuContainer = styled.div`
 export const StyledLink = styled(Link)`
   color: ${colors.WHITE};
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

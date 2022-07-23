@@ -9,3 +9,5 @@ export const Button = React.lazy(() => import('./Button'));
 export const Inline = React.lazy(() => import('./Inline'));
 export const Container = React.lazy(() => import('./Container'));
 export const Col = React.lazy(() => import('./Col'));
+export const Row = React.lazy(() => import('./Row'));
+export const Table = React.lazy(() => import('./Table'));

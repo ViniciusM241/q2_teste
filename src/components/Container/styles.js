@@ -6,21 +6,20 @@ function calcWidth(breakpoints) {
 
   if (breakpoints.xs) {
     columns = 4;
-    gap = 10;
   }
 
   if (breakpoints.sm) {
     columns = 8;
-    gap = 10;
   }
 
-  const calc = 65 * columns + 11 * gap;
+  const calc = 65 * columns + (columns - 1) * gap;
 
   return calc;
 }
 
 export const StyledContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 
   margin: 0 auto;
   width: ${props => calcWidth(props.breakpoints)}px;

@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "Guilherme Q2Pay",
+      "createdAt": "2021-10-12T17:35:39.048Z",
       "document": "904.289.970-07",
       "bank": {
         "bankName": "237 - Banco Bradesco S.A.",
@@ -14,6 +15,7 @@
     {
     "id": 2,
       "name": "Dimitry Q2Pay",
+      "createdAt": "2022-05-10T17:35:39.048Z",
       "document": "025.666.670-98",
       "bank": {
         "bankName": "033 - Banco Santander Brasil S.A.",
@@ -25,6 +27,7 @@
     {
     "id": 3,
       "name": "Juan Q2Pay",
+      "createdAt": "2022-07-23T17:35:39.048Z",
       "document": "092.607.860-70",
       "bank": {
         "bankName": "001 - Banco do Brasil S.A.",
@@ -32,11 +35,215 @@
         "agency": "2086",
         "account": "24206-3"
       }
-    }
+    },
+    {
+      "id": 4,
+      "name": "Guilherme Q2Pay",
+      "createdAt": "2021-10-12T17:35:39.048Z",
+      "document": "904.289.970-07",
+      "bank": {
+        "bankName": "237 - Banco Bradesco S.A.",
+        "code": "237",
+        "agency": "0001",
+        "account": "1167115-2"
+      }
+    },
+    {
+    "id": 5,
+      "name": "Dimitry Q2Pay",
+      "createdAt": "2022-05-10T17:35:39.048Z",
+      "document": "025.666.670-98",
+      "bank": {
+        "bankName": "033 - Banco Santander Brasil S.A.",
+        "code": "033",
+        "agency": "3634",
+        "account": "35934064-0"
+      }
+    },
+    {
+    "id": 6,
+      "name": "Juan Q2Pay",
+      "createdAt": "2022-07-23T17:35:39.048Z",
+      "document": "092.607.860-70",
+      "bank": {
+        "bankName": "001 - Banco do Brasil S.A.",
+        "code": "001",
+        "agency": "2086",
+        "account": "24206-3"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Guilherme Q2Pay",
+      "createdAt": "2021-10-12T17:35:39.048Z",
+      "document": "904.289.970-07",
+      "bank": {
+        "bankName": "237 - Banco Bradesco S.A.",
+        "code": "237",
+        "agency": "0001",
+        "account": "1167115-2"
+      }
+    },
+    {
+    "id": 8,
+      "name": "Dimitry Q2Pay",
+      "createdAt": "2022-05-10T17:35:39.048Z",
+      "document": "025.666.670-98",
+      "bank": {
+        "bankName": "033 - Banco Santander Brasil S.A.",
+        "code": "033",
+        "agency": "3634",
+        "account": "35934064-0"
+      }
+    },
+    {
+    "id": 9,
+      "name": "Juan Q2Pay",
+      "createdAt": "2022-07-23T17:35:39.048Z",
+      "document": "092.607.860-70",
+      "bank": {
+        "bankName": "001 - Banco do Brasil S.A.",
+        "code": "001",
+        "agency": "2086",
+        "account": "24206-3"
+      }
+    },
+    {
+      "id": 10,
+        "name": "Juan Q2Pay",
+        "createdAt": "2022-07-23T17:35:39.048Z",
+        "document": "092.607.860-70",
+        "bank": {
+          "bankName": "001 - Banco do Brasil S.A.",
+          "code": "001",
+          "agency": "2086",
+          "account": "24206-3"
+        }
+      },
+      {
+        "id": 11,
+        "name": "Guilherme Q2Pay",
+        "createdAt": "2021-10-12T17:35:39.048Z",
+        "document": "904.289.970-07",
+        "bank": {
+          "bankName": "237 - Banco Bradesco S.A.",
+          "code": "237",
+          "agency": "0001",
+          "account": "1167115-2"
+        }
+      },
+      {
+      "id": 12,
+        "name": "Dimitry Q2Pay",
+        "createdAt": "2022-05-10T17:35:39.048Z",
+        "document": "025.666.670-98",
+        "bank": {
+          "bankName": "033 - Banco Santander Brasil S.A.",
+          "code": "033",
+          "agency": "3634",
+          "account": "35934064-0"
+        }
+      },
+      {
+      "id": 13,
+        "name": "Juan Q2Pay",
+        "createdAt": "2022-07-23T17:35:39.048Z",
+        "document": "092.607.860-70",
+        "bank": {
+          "bankName": "001 - Banco do Brasil S.A.",
+          "code": "001",
+          "agency": "2086",
+          "account": "24206-3"
+        }
+      },
+      {
+        "id": 14,
+        "name": "Guilherme Q2Pay",
+        "createdAt": "2021-10-12T17:35:39.048Z",
+        "document": "904.289.970-07",
+        "bank": {
+          "bankName": "237 - Banco Bradesco S.A.",
+          "code": "237",
+          "agency": "0001",
+          "account": "1167115-2"
+        }
+      },
+      {
+      "id": 15,
+        "name": "Dimitry Q2Pay",
+        "createdAt": "2022-05-10T17:35:39.048Z",
+        "document": "025.666.670-98",
+        "bank": {
+          "bankName": "033 - Banco Santander Brasil S.A.",
+          "code": "033",
+          "agency": "3634",
+          "account": "35934064-0"
+        }
+      },
+      {
+      "id": 16,
+        "name": "Juan Q2Pay",
+        "createdAt": "2022-07-23T17:35:39.048Z",
+        "document": "092.607.860-70",
+        "bank": {
+          "bankName": "001 - Banco do Brasil S.A.",
+          "code": "001",
+          "agency": "2086",
+          "account": "24206-3"
+        }
+      },
+      {
+        "id": 17,
+        "name": "Guilherme Q2Pay",
+        "createdAt": "2021-10-12T17:35:39.048Z",
+        "document": "904.289.970-07",
+        "bank": {
+          "bankName": "237 - Banco Bradesco S.A.",
+          "code": "237",
+          "agency": "0001",
+          "account": "1167115-2"
+        }
+      },
+      {
+      "id": 18,
+        "name": "Dimitry Q2Pay",
+        "createdAt": "2022-05-10T17:35:39.048Z",
+        "document": "025.666.670-98",
+        "bank": {
+          "bankName": "033 - Banco Santander Brasil S.A.",
+          "code": "033",
+          "agency": "3634",
+          "account": "35934064-0"
+        }
+      },
+      {
+      "id": 19,
+        "name": "Juan Q2Pay",
+        "createdAt": "2022-07-23T17:35:39.048Z",
+        "document": "092.607.860-70",
+        "bank": {
+          "bankName": "001 - Banco do Brasil S.A.",
+          "code": "001",
+          "agency": "2086",
+          "account": "24206-3"
+        }
+      },
+      {
+        "id": 20,
+          "name": "Juan Q2Pay",
+          "createdAt": "2022-07-23T17:35:39.048Z",
+          "document": "092.607.860-70",
+          "bank": {
+            "bankName": "001 - Banco do Brasil S.A.",
+            "code": "001",
+            "agency": "2086",
+            "account": "24206-3"
+          }
+        }
   ],
   "users": [
     {
-      "name": "Vinicius Melo",
+      "name": "Administrador",
       "username": "admin",
       "password": "123",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ikd1aWxoZXJtZSBRMlBheSIsImVtYWlsIjoicTJwYXlAcTJwYXkuY29tLmJyIiwiaWF0IjoxNTE2MjM5MDIyfQ.oeSQVqs557aaURcIU9v7MgJVKLwsr6fenZ4EUSd1ZPo"

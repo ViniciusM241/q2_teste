@@ -11,5 +11,5 @@ export const StyledContainer = styled.header`
 export const Logo = styled.img.attrs({
   src: logo,
 })`
-  height: 80%;
+  height: 60%;
 `;

@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
-function calcWidth(cols, breakpoints) {
-  const gap = breakpoints.sm || breakpoints.xs ? 10 : 20;
-  const column = 65;
-  const gapQty = cols;
-  const result = cols * column + gapQty * gap;
+function calcWidth(cols) {
+  const result = cols / 12 * 100;
 
   return result;
 }
@@ -13,7 +10,6 @@ export const StyledCol = styled.div`
   display: flex;
   align-items: center;
 
-  width: ${props => calcWidth(props.cols, props.breakpoints)}px;
-  /* background-color: blue; */
+  width: ${props => calcWidth(props.cols)}%;
   height: 100%;
 `;

@@ -8,6 +8,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: right;
+  padding-bottom: 15px;
 
   position: relative;
 

@@ -4,4 +4,6 @@ export default {
   'LIGHT_BLUE_30': '#C4DBF8',
   'WHITE': '#FFFFFF',
   'LIGHT_GRAY': '#FAFAFA',
+  'GRAY': '#EBEBEB',
+  'TEXT': '#000000',
 };

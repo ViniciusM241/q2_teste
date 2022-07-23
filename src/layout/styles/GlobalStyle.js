@@ -37,6 +37,14 @@ const GlobalStyle = createGlobalStyle`
   .mb-40 {
     margin-bottom: 40px;
   }
+
+  .ml-10 {
+    margin-left: 10px;
+  }
+
+  .mr-10 {
+    margin-right: 10px;
+  }
 `;
 
 export default GlobalStyle;
