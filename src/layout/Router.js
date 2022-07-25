@@ -1,4 +1,4 @@
-import React, { Suspense, useCallback } from 'react';
+import React, { Suspense } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import routes from '~/routes';
 
 import Header from './Header';
+import FloatingLink from './FloatingLink';
 import NotFound from '~/views/NotFound';
 import SuspenseLoading from '~/components/SuspenseLoading';
 
@@ -29,7 +30,7 @@ function CustomRouter () {
                 exact,
                 ...props
               }, index) => {
-                const Element = useCallback(() => {
+                const Element = () => {
                   const next = () => {
                     return {
                       element: Component && (
@@ -37,21 +38,22 @@ function CustomRouter () {
                       ),
                       success: true,
                     };
-                  }
+                  };
 
                   const redirect = (to) => {
                     return {
                       element: <Navigate to={to} {...props} />,
                       success: false,
                     };
-                  }
+                  };
 
                   if (middlewares && middlewares.length) {
                     let response = null;
 
                     for (let i = 0; i < middlewares.length; i++) {
                       const _middleware = middlewares[i](next, redirect, { dispatch });
-                      response = _middleware()
+                      response = _middleware();
+
                       if (response.success === false) {
                         break;
                       }
@@ -63,19 +65,16 @@ function CustomRouter () {
                       Component && (
                         <Component {...props} />
                       )
-                    )
+                    );
                   }
-                }, [
-                  middlewares,
-                  Component,
-                ]);
+                };
 
                 return (
                   <Route
                     key={index}
                     path={path}
                     exact={exact}
-                    element={<Element {...props} />}
+                    element={<Element />}
                   />
                 );
               })
@@ -87,6 +86,7 @@ function CustomRouter () {
             />
           </Routes>
         </main>
+        <FloatingLink />
       </BrowserRouter>
     </Suspense>
   );

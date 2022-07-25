@@ -30,7 +30,7 @@ function Login() {
   const breakpoints = useBreakpoints();
   const [error, setError] = useState('');
 
-  const onSubmit = (values) => {
+  const onSubmit = ({ values }) => {
     if (!values.username || !values.password) return;
 
     dispatch(login(
@@ -72,6 +72,10 @@ function Login() {
           <Form
             className="mt-20"
             onSubmit={onSubmit}
+            initialValues={{
+              username: '',
+              password: '',
+            }}
           >
             <Input
               className="mb-20"

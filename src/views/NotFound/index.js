@@ -15,7 +15,7 @@ function NotFound() {
     <Container>
       <Inline className="mt-40" center>
         <T1 style={{ color: colors.LIGHT_BLUE, textAlign: 'center' }}>
-          404 - Não encontrado
+          404 - Página não encontrada
         </T1>
       </Inline>
       <Inline className="mt-40" center>

@@ -1,28 +1,90 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyledForm } from './styles';
 
 function Form({
   children,
   onSubmit,
   initialValues={},
+  validationSchema,
   ...props
 }) {
 
   const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    setValues(initialValues);
+  }, [initialValues]);
+
+  const getObjectValue = (string) => {
+    const value = string.split('.').reduce((a, b) => a[b], values);
+
+    return value;
+  };
+
+  const handleValidation = () => {
+    const res = validationSchema.validate(values, { abortEarly: false });
+
+    if (res.error) {
+      let errorsList = {};
+
+      res.error.details.forEach(error => {
+          const field = error.context.key;
+          errorsList = {
+              ...errorsList,
+              [field]: error.message,
+          };
+      });
+
+      setErrors(errorsList);
+
+      return false;
+    } else {
+      setErrors({});
+
+      return true;
+    }
+  };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    onSubmit(values);
+
+    if (validationSchema) {
+      const isValid = handleValidation();
+
+      if (!isValid) return;
+    }
+
+    onSubmit({
+      values,
+      errors,
+    });
   };
 
   const handleOnChange = (e, field) => {
     const newText = e.target.value;
+    const splitted = field.split('.');
 
-    setValues(state => ({
+    if (splitted.length > 1) {
+      const newObject = { ...values[splitted[0]], [splitted[1]]: newText };
+
+      return setValues(state => ({
+        ...state,
+        [splitted[0]]: newObject,
+      }));
+    }
+
+    return setValues(state => ({
       ...state,
       [field]: newText,
     }));
   };
+
+  const handleValue = (value, element) => {
+    if (element.props.valueMask)
+      return element.props.valueMask(value);
+    return value;
+  }
 
   const injectDependencies = (child) => {
     if (typeof child === 'string') return child;
@@ -53,8 +115,16 @@ function Form({
     if (child.props?.name && child.props?.type) {
       newChild.props = {
         ...child.props,
-        value: Object.prototype.hasOwnProperty.call(values, child.props.name) ? values[child.props.name] : '',
-        onChange: (e) => handleOnChange(e, child.props.name),
+        value: handleValue(Object.prototype.hasOwnProperty.call(values, child.props.name.split('.')[0]) ? getObjectValue(child.props.name) : '', child),
+        error: errors[child.props.name],
+        onChange: (e) => {
+          let value = e;
+
+          if (child.props.onChange)
+            value.target.value = child.props.onChange(e.target.value, e);
+
+          handleOnChange(value, child.props.name)
+        },
       };
     }
 
@@ -62,9 +132,22 @@ function Form({
   };
 
   const handleChildren = (childrenElements) => {
-    return childrenElements.map(child => {
-      return injectDependencies(child);
-    });
+    let elements = childrenElements;
+
+    if (typeof childrenElements === 'function') {
+      elements = childrenElements({
+        values,
+        onSubmit,
+      });
+    }
+
+    if (Array.isArray(elements)) {
+      return elements.map(child => {
+        return injectDependencies(child);
+      });
+    }
+
+    return injectDependencies(elements);
   };
 
   return (

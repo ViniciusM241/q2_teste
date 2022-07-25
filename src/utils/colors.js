@@ -6,4 +6,7 @@ export default {
   'LIGHT_GRAY': '#FAFAFA',
   'GRAY': '#EBEBEB',
   'TEXT': '#000000',
+  'LIGHT_TEXT': '#626262',
+  'RED_30': '#F8C4C4',
+  'RED': '#F44545',
 };

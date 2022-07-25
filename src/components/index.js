@@ -11,3 +11,4 @@ export const Container = React.lazy(() => import('./Container'));
 export const Col = React.lazy(() => import('./Col'));
 export const Row = React.lazy(() => import('./Row'));
 export const Table = React.lazy(() => import('./Table'));
+export const Line = React.lazy(() => import('./Line'));

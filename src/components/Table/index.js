@@ -16,6 +16,10 @@ function Table({
   const [filters, setFilters] = useState({
     pageIndex: 0,
     maxPage,
+    order: {
+      accessor: columns[0].accessor,
+      asc: true,
+    }
   });
 
   useEffect(() => {
@@ -31,7 +35,7 @@ function Table({
             setFilters={setFilters}
           />
           {
-            data.length ? (
+            !!data.length && (
               <Rows>
                 {
                   data.slice(0, maxPage).map((row, index) => (
@@ -45,7 +49,7 @@ function Table({
                   ))
                 }
               </Rows>
-            ) : 'Nenhum registro encontrado'
+            )
           }
         </StyledTable>
       </Container>

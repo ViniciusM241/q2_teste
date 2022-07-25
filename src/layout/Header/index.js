@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { getToken } from "~/boot/auth";
+import { getUserByToken } from "~/views/Login/store/actions";
 import useBreakpoints from "~/hooks/useBreakpoints";
 import {
   Container,
@@ -18,9 +21,15 @@ import colors from "~/utils/colors";
 
 function Header() {
   const location = useLocation();
+  const dispatch = useDispatch();
   const breakpoints = useBreakpoints();
 
   const [navBarOpened, setNavBarOpened] = useState(false);
+
+  useEffect(() => {
+    const token = getToken();
+    dispatch(getUserByToken(token));
+  }, [getToken]);
 
   if (location.pathname !== '/login') {
     return (

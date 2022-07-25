@@ -17,7 +17,7 @@ function Home() {
   const navigate = useNavigate();
   const customers = useSelector(state => state.customers.customers);
   const totalCustomers = useSelector(state => state.customers.total);
-  console.log(totalCustomers)
+
   const [filters, setFilters] = useState('');
 
   const columns = useMemo(() => [

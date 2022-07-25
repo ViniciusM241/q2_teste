@@ -1,7 +1,7 @@
 import React from 'react';
 const HomePage = React.lazy(() => import('./index'));
+const CustomerData = React.lazy(() => import('./subpages/CustomerData'));
 import isLogged from '~/middlewares/isLogged';
-import getUser from '~/middlewares/getUser';
 
 export default [
   {
@@ -10,7 +10,14 @@ export default [
     exact: true,
     middlewares: [
       isLogged,
-      getUser,
+    ],
+  },
+  {
+    path: '/home/clientes/:id/dados',
+    element: CustomerData,
+    exact: true,
+    middlewares: [
+      isLogged,
     ],
   },
 ];

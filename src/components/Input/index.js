@@ -1,15 +1,24 @@
 import React from 'react';
-import { StyledInput, StyledLabel } from './styles';
+import { StyledInput, StyledLabel, StyledError } from './styles';
 
 function Input({
   label,
   ...props
 }) {
   return (
-    <StyledLabel htmlFor={props.name}>
-      {label}
-      <StyledInput {...props} />
-    </StyledLabel>
+    <div style={{width: '100%'}}>
+      <StyledLabel htmlFor={props.name}>
+        {label}
+        <StyledInput {...props} />
+      </StyledLabel>
+      {
+        props.error && !props.disabled && (
+          <StyledError>
+            {props.error}
+          </StyledError>
+        )
+      }
+    </div>
   );
 }
 

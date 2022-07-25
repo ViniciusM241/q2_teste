@@ -1,15 +1,19 @@
 import React from "react";
-import { MobileNavBarContainer, Container, StyledLink } from './styles';
+import { MobileNavBarContainer, Container, StyledLink, Item } from './styles';
 import { CloseOutlined } from '@ant-design/icons';
 import { Inline } from "~/components";
 import colors from "~/utils/colors";
 import menus from "../../menus";
 import { useSelector } from 'react-redux';
+import { removeToken } from '~/boot/auth';
+import { useNavigate } from 'react-router-dom';
 
 function MobileNavBar({
   opened,
   toggle,
 }) {
+  const navigate = useNavigate();
+
   const user = useSelector(state => state.login.user);
 
   return (
@@ -36,6 +40,15 @@ function MobileNavBar({
             </Inline>
           ))
         }
+        <Item
+          className="mt-40"
+          onClick={() => {
+            removeToken();
+            navigate('/login');
+          }}
+        >
+          Sair
+        </Item>
       </MobileNavBarContainer>
     </Container>
   );

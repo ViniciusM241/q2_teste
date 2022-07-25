@@ -51,7 +51,7 @@ function Header({ columns, setFilters }) {
                 {column.label}
                 {
                   order.accessor === column.accessor ?
-                    order.asc ?
+                    !order.asc ?
                       <DownOutlined
                         className="ml-10"
                         style={{ fontSize: '.8rem' }}

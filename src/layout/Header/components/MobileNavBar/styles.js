@@ -10,6 +10,7 @@ export const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1000;
 `;
 
 export const MobileNavBarContainer = styled.div`
@@ -23,4 +24,11 @@ export const StyledLink = styled(Link)`
   color: ${colors.WHITE};
   font-weight: 400;
   text-decoration: none;
+`;
+
+export const Item = styled.div`
+  font-weight: 700;
+  text-decoration: underline;
+
+  color: ${colors.WHITE};
 `;

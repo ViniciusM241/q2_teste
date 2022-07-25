@@ -8,6 +8,10 @@ export function getToken() {
   return localStorage.getItem(KEY);
 }
 
+export function removeToken() {
+  return localStorage.removeItem(KEY);
+}
+
 export function setToken(token) {
   if (!token) return;
 
