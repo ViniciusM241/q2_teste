@@ -22,6 +22,11 @@ function CustomRouter () {
         <Header />
         <main>
           <Routes>
+            <Route
+              path={'/'}
+              exact={true}
+              element={<Navigate to='/login' />}
+            />
             {
               routes.map(({
                 middlewares,
