@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -28,9 +28,14 @@ function CustomRouter () {
                 element: Component,
                 path,
                 exact,
+                title,
                 ...props
               }, index) => {
                 const Element = () => {
+                  useEffect(() => {
+                    document.title = title;
+                  }, [title]);
+
                   const next = () => {
                     return {
                       element: Component && (

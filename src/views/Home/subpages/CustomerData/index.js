@@ -19,6 +19,7 @@ import { cnpj, cpf, number, formatDate } from '~/utils/masks';
 import validationSchema from '~/utils/validations/customerData';
 import { StyledIconButton } from './styles';
 import saveCustomer from "./services/saveCustomer";
+import { ToastContainer, toast } from 'react-toastify';
 
 function CustomerData() {
   const navigate = useNavigate();
@@ -43,9 +44,12 @@ function CustomerData() {
     const res = await saveCustomer(values);
 
     if (res.status === 200) {
-      //ok
+      toast.success('Dados salvos com sucesso');
+
       dispatch(setCustomer(values));
     } else {
+      toast.error('Houve um erro ao salvar. Tente novamente mais tarde');
+
       dispatch(setCustomer(customer));
     }
   };
@@ -91,6 +95,7 @@ function CustomerData() {
                   aria-label="Cancelar"
                   className="ml-10"
                   onClick={() => {
+                    dispatch(setCustomer({...customer}));
                     setIsEditable(false);
                   }}
                 >
@@ -194,6 +199,7 @@ function CustomerData() {
           )
         }
       </Form>
+      <ToastContainer />
     </Container>
   );
 }

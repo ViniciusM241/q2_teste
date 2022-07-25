@@ -14,7 +14,7 @@ function Form({
 
   useEffect(() => {
     setValues(initialValues);
-  }, [initialValues]);
+  }, [initialValues, setValues]);
 
   const getObjectValue = (string) => {
     const value = string.split('.').reduce((a, b) => a[b], values);

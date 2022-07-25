@@ -5,5 +5,6 @@ export default [
   {
     path: '/login',
     element: Login,
+    title: 'Q2Pay - Login',
   },
 ];

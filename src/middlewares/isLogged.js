@@ -6,11 +6,12 @@ function isLogged(next, redirect) {
 
     if (!token) {
       alert('Login necessário');
+
       return redirect('/login');
     } else {
       return next();
     }
-  }
+  };
 }
 
 export default isLogged;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { getToken } from "~/boot/auth";
+import { getToken, isLogged } from "~/boot/auth";
 import { getUserByToken } from "~/views/Login/store/actions";
 import useBreakpoints from "~/hooks/useBreakpoints";
 import {
@@ -27,11 +27,13 @@ function Header() {
   const [navBarOpened, setNavBarOpened] = useState(false);
 
   useEffect(() => {
-    const token = getToken();
-    dispatch(getUserByToken(token));
-  }, [getToken]);
+    if (isLogged()) {
+      const token = getToken();
+      dispatch(getUserByToken(token));
+    }
+  }, [getToken, isLogged]);
 
-  if (location.pathname !== '/login') {
+  if (location.pathname !== '/login' && isLogged()) {
     return (
       <StyledContainer className="mb-40">
         <Container>

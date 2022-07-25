@@ -8,6 +8,7 @@ export default [
     path: '/home',
     element: HomePage,
     exact: true,
+    title: 'Q2Pay - Home',
     middlewares: [
       isLogged,
     ],
@@ -16,6 +17,7 @@ export default [
     path: '/home/clientes/:id/dados',
     element: CustomerData,
     exact: true,
+    title: 'Q2Pay - Dados do cliente',
     middlewares: [
       isLogged,
     ],
